@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>originalfiles</title>
+</head>
+<body>
+<h2>YOUR ORIGINAL FILE/S WILL APPEAR HERE ONCE YOU CLICK DECRYPT  </h2>
+<div>
+
+    <form id="uploadDecryptedFiles" name="uploadDecryptedFiles" method="post" th:action=@{/uploadDecryptedFiles} enctype="multipart/form-data">
+        <button type="submit">Decrypt</button>
+    </form>
+    <table>
+        <thead>
+        <tr>
+            <th>Document Id </th>
+            <th>Document name</th>
+            <th> Original File </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each ="documents:${document}">
+            <td th:text ="${documents.Id}"></td>
+            <td th:text ="${documents.docName}"></td>
+            <td> <button type="button"> <a th:href ="'/downloadFiles/' +${documents.id}"> Download </a> </button></td>
+
+        </tr>
+        </tbody>
+    </table>
+
+</div >
+<div>
+    <button type="button"> <a href="/todecryptedocs">Back</a>  </button>
+</div>
+</body>
+</html>

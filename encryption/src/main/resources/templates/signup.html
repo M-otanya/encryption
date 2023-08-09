@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial- scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap-5.2.0/css/bootstrap.min.css">
+    <title>encrypt/signup</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container-main">
+        <div class="row">
+            <div class="col-md-6 side-image">
+                <img src="/images/cyber.jpg" alt="cyber-image">
+                <div class="text">
+                    <p>Sign up and let's get you on board</p>
+                    <p> <i>Protect your precious files from prying eyes and
+                        potential threats with encryption. Safeguard your
+                        personal and sensitive data with us.</i></p>
+                </div>
+            </div>
+            <div class="col-md-6 right">
+
+                    <div class="input-box">
+                        <form th:action="@{/newRegister}" method="Post">
+                            <header> create an account</header>
+                            <div class="input-field">
+                                <input type="text" class="input" id="email"  placeholder="Example@email.com" name="userGmailString" required autocomplete="off">
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="input-field">
+                                <input type="password" placeholder="At least 8 characters" class="input" id="password" name="userPassword" required >
+                                <label for="password">Password</label>
+                            </div>
+                            <div class="input-field">
+                               <input type="submit" class="submit" value="sign up">
+                            </div>
+                        </form>
+                        <div class="signup">
+                            <span> Already have an account? <a href="/signin">log in </a></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>encryption</title>
+</head>
+<body>
+ <div>
+     <h2> please choose file/s to upload </h2>
+     <form id="uploadFiles" name="uploadFiles" method="post" th:action=@{/uploadFiles} enctype="multipart/form-data">
+          <input type="file" name="files" required/>
+           <button type="submit">submit</button>
+     </form>
+ </div>
+<div>
+        <h2> your uploaded files</h2>
+       <table>
+           <thead>
+           <tr>
+               <th>Document Id </th>
+               <th>Document name</th>
+               <th>Encrypted File</th>
+
+           </tr>
+           </thead>
+           <tbody>
+           <tr th:each ="doc:${docs}">
+               <td th:text ="${doc.Id}"></td>
+               <td th:text ="${doc.docName}"></td>
+               <td> <button type="button"><a th:href ="'/downloadFile/' +${doc.id}"> Download </a> </button></td>
+           </tr>
+           </tbody>
+       </table>
+
+</div>
+<div>
+    <button type="button"> <a href="/tooriginaldocs"> get original files</a>  </button>
+</div>
+
+</body>
+</html>
